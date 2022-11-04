@@ -1,0 +1,43 @@
+.footer{
+    background-color: #17181C;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text{
+    text-align: center;
+    font-size: 0.9em;
+    color: #EAEBED;
+    padding: 5px 0 5px 0;
+}
+
+.footer-contact{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact{
+    display: flex;
+    gap: 10px;
+}
+
+.contact-icon{
+    font-size: 1.5em;
+    color: #EAEBED;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.contact-icon:hover{
+    color: #2365BB;
+    transition: 200ms;
+    transform: scale(1.1) ease;
+}

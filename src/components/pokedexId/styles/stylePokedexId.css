@@ -1,0 +1,14 @@
+.pokedexId {
+    width: 100%;
+    padding: 50px 0;
+}
+
+@media screen and (min-width: 480px) {
+    .pokedexId {
+        margin-top: 3em;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+}

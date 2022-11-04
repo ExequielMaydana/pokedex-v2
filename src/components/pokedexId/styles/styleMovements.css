@@ -1,0 +1,42 @@
+.card-movements{
+    width: min(100%, 500px);
+    padding: 10px;
+    border: 1px solid #17181c41;
+    margin-top: 5px;
+}
+
+.movements-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.movements-vector{
+    width: 60%;
+    margin-top: 4px;
+}
+
+.movements-container-list{
+    width: 100%;
+}
+
+.list-container-names{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.list-names{
+    border: 1px solid #17181c41;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+@media screen and (min-width: 480px){
+    .card-movements{
+        margin-top: 0;
+    }
+}

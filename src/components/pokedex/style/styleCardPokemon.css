@@ -1,0 +1,189 @@
+.card-pokemon{
+    width: min(70%, 300px);
+    border-radius: 3px;
+}
+
+.container-img-pokemon{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.pokemon-img{
+    max-width: 150px;
+    filter: drop-shadow(3px 3px 8px #EAEBED);
+    padding: 0 0 20px 0;
+}
+
+.pokemon-text{
+    width: 100%;
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.pokemon-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-name h3 {
+    font-weight: 800;
+}
+
+.pokemon-name span {
+    color: #17181c90;
+}
+
+.container-characteristics{
+    width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   place-items: center;
+   row-gap: 10px;
+
+   border-top: 1px solid #17181c8d;
+   padding-top: 10px;
+   background-color: #FFFF;
+}
+
+.characteristics-item{
+    font-weight: 800;
+}
+
+.characteristics-item b {
+    font-weight: 400;
+    color: #17181c90;
+}
+
+.background-blue{
+    background: linear-gradient(177.03deg, #323569 -11.97%, #454AA8 57.49%, #787DDA 135.64%);    
+    border: 5px solid #454AA8;
+}
+
+.pokemon-name .color-blue{
+    color: #454AA8;
+}
+
+.container-characteristics .color-blue{
+    color: #454AA8;
+}
+
+.background-black{
+    background: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%);
+    border: 5px solid #030706;
+}
+
+.pokemon-name .color-black{
+    color: #030706;
+}
+
+.container-characteristics .color-black{
+    color: #030706;
+}
+
+.background-green{
+    background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+    border: 5px solid #ABDAC6;
+}
+
+.pokemon-name .color-green{
+    color: #ABDAC6;
+}
+
+.container-characteristics .color-green{
+    color: #ABDAC6;
+}
+
+.background-brown{
+    background: linear-gradient(176.83deg, #7b3c2c -8.78%, #F1613C 169.09%, #CB735D 242.33%);
+    border: 5px solid #894a3a;
+}
+
+.pokemon-name .color-brown{
+    color: #732b19;
+}
+
+.container-characteristics .color-brown{
+    color: #732b19;
+}
+
+.background-gray{
+    background: linear-gradient(177.03deg, #7E7E7E -11.97%, #8D8D94 57.49%, #D3D3D3 135.64%);    
+    border: 5px solid #8D8D94;
+}
+
+.pokemon-name .color-gray{
+    color: #7E7E7E;
+}
+
+.container-characteristics .color-gray{
+    color: #7E7E7E;
+}
+
+.background-pink{
+    background: linear-gradient(179.75deg, #971B45 -19.96%, #C23867 43.67%, #CD7D98 138.4%);
+    border: 5px solid #C23867;
+}
+
+.pokemon-name .color-pink{
+    color: #C23867;
+}
+
+.container-characteristics .color-pink{
+    color: #C23867;
+}
+
+.background-purple{
+    background: linear-gradient(177.03deg, #5B3184 -11.97%, #A564E3 71.28%, #CE9BFF 135.64%);
+    border: 5px solid #A564E3;
+}
+
+.pokemon-name .color-purple{
+    color: #5B3184;
+}
+
+.container-characteristics .color-purple{
+    color: #5B3184;
+}
+
+.background-red{
+    background: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
+    border: 5px solid #E35825;
+}
+
+.pokemon-name .color-red{
+    color: #E35825;
+}
+
+.container-characteristics .color-red{
+    color: #E35825;
+}
+
+.background-white{
+    background: linear-gradient(179.75deg, #5E736C -19.96%, #728881 43.67%, #A8A8A8 138.4%);
+    border: 5px solid #728881;
+}
+
+.pokemon-name .color-white{
+    color: #728881;
+}
+
+.container-characteristics .color-white{
+    color: #728881;
+}
+
+.background-yellow{
+    background: linear-gradient(179.75deg, #ed9511 -19.96%, #ba750e 43.67%, #ef9206 138.4%);
+    border: 5px solid #895C1A;
+}
+
+.pokemon-name .color-yellow{
+    color: #ef9206;
+}
+
+.container-characteristics .color-yellow{
+    color: #ef9206;
+}
