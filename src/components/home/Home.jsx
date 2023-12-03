@@ -3,15 +3,11 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { nameUserGlobal } from "../../store/slices/nameUser.slice";
-import useGetUrlPokemons from "../hooks/useGetUrlPokemons";
-import Loading from "../loading/Loading";
 import ModalError from "./ModalError";
 import "./style/styleHome.css";
 
 const Home = ({ setIsLogged }) => {
   const { register, handleSubmit } = useForm();
-
-  const { loading } = useGetUrlPokemons();
 
   // este estado maneja cuando se muestra el modal de error.
   const [modalError, setModalError] = useState(false);
@@ -27,39 +23,44 @@ const Home = ({ setIsLogged }) => {
     Si el input esta vacio renderizo un modal, avisandole al usuaio del error.
   */
   const submit = (data) => {
-    dispatch(nameUserGlobal(data));
     if (data.name.trim() !== "") {
+      dispatch(nameUserGlobal(data));
       setIsLogged(true);
       navigate("pokedex");
     } else {
       setModalError(true);
-      console.log("hola");
     }
   };
 
-  return loading ? (
-    <Loading />
-  ) : (
+  return (
     <section className="raiz">
-      {modalError ? <ModalError setModalError={setModalError}/> : null}
-      <div className="container-form">
-        <form className="form" onSubmit={handleSubmit(submit)}>
-          <div className="form-text">
-            <h2>Hello traine!</h2>
-          </div>
-          <div className="form-item">
-            <label htmlFor="name" className="form-label">
-              Your name:
-            </label>
-            <input
-              className="form-input"
-              id="name"
-              {...register("name", { maxLength: 10 })}
-            />
-          </div>
-          <button className="form-btn">Go</button>
-        </form>
-      </div>
+      {modalError ? <ModalError setModalError={setModalError} /> : null}
+      <header className="header">
+        <figure className="img-one">
+          <img src="img-home/pokeball.png" alt="dragon" className="img" />
+        </figure>
+        <h2 className="raiz-title">Pokedex ReactJS</h2>
+      </header>
+
+      <form className="form" onSubmit={handleSubmit(submit)}>
+        <div className="form-text">
+          <h2>Hola aprendiz!</h2>
+          <p>Para avanzar a la siguiente página debes proporcionar un nombre</p>
+        </div>
+        <div className="form-item">
+          <label htmlFor="name" className="form-label">
+            Tu nombre:
+          </label>
+          <input
+            className="form-input"
+            id="name"
+            {...register("name", { maxLength: 10 })}
+          />
+        </div>
+        <button className="form-btn">
+          <p>Avanzar</p>
+        </button>
+      </form>
     </section>
   );
 };

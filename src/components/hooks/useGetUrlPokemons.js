@@ -2,42 +2,49 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useGetUrlPokemons = () => {
-  /* en este hook traigo todas las url de los pokemones, 
-    dependiendo del limite que ponga en la URL, luego llamo a este hook en Pokedex y mapeo estas URL,
-    En PokemonCard llamo al otro hook y hago la peticion de cada pokemon.
-    */
-
-  const [pokemons, setPokemons] = useState([]);
-
-    // con este estado controlo la pantalla de carga
-    const [loading, setLoading] = useState(true);
-
-    // aqui guardo el tipo que el usuario haya seleccionado para hacer el filtro por tipo.
-    const [nameType, setNameType] = useState('All Pokemons')
+  const [filteredPokemons, setFilteredPokemons] = useState([]);
+  const [pokemonType, setPokemonType] = useState("");
+  const [namePokeSearch, setNamePokeSearch] = useState("");
 
   useEffect(() => {
-    if(nameType === 'All Pokemons'){
-      const URL = "https://pokeapi.co/api/v2/pokemon/?offset=1&limit=100";
+    if (pokemonType === "All Pokemons") {
+      const URL = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1292";
       axios
         .get(URL)
         .then((res) => {
-          setPokemons(res.data.results)
-          setLoading(false)
+          setFilteredPokemons(res.data.results);
         })
         .catch((err) => console.log(err));
-    }else{
-      const URL = `https://pokeapi.co/api/v2/type/${nameType}/`
-      axios.get(URL)
-      .then(res => {
-        const pokemonesPorType = res.data.pokemon.map(e => e.pokemon)
-        setPokemons(pokemonesPorType)
-        setLoading(false)
-      })
-      .catch(err => console.log(err))
+    } else if (pokemonType.length > 0) {
+      const URL = `https://pokeapi.co/api/v2/type/${pokemonType}`;
+      axios
+        .get(URL)
+        .then((res) => {
+          const pokemonesPorType = res.data.pokemon.map((e) => e.pokemon);
+          setFilteredPokemons(pokemonesPorType);
+        })
+        .catch((err) => console.log(err));
     }
-  }, [nameType]);
 
-  return { pokemons, setNameType, loading};
+    if (namePokeSearch.length > 0) {
+      const URL = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1292`;
+      axios
+        .get(URL)
+        .then((res) => {
+          const filteredResults = res.data.results.filter((pokemon) =>
+            pokemon.name.includes(namePokeSearch.toLowerCase())
+          );
+          setFilteredPokemons(filteredResults);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [pokemonType, namePokeSearch]);
+
+  return {
+    filteredPokemons,
+    setPokemonType,
+    setNamePokeSearch,
+  };
 };
 
 export default useGetUrlPokemons;

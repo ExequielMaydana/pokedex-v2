@@ -7,15 +7,13 @@ const useGetCharacters = (url) => {
   const [characters, setCharacters] = useState();
 
   useEffect(() => {
-    if(url !== undefined){
+    if (url !== undefined) {
       axios
-      .get(url)
-      .then((res) => setCharacters(res.data))
-      .catch((err) => console.log(err));
-    } 
-   
+        .get(url)
+        .then((res) => setCharacters(res.data))
+        .catch((err) => console.log(err));
+    }
   }, []);
-  
 
   return { characters };
 };

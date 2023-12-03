@@ -8,13 +8,14 @@ const ModalError = ({ setModalError }) => {
         <ContenedorModal>
           <EncabezadoModal>
             <h2>¡Ups!</h2>
+            <BotonCerra>
+              <i className="bx bx-x" onClick={() => setModalError(false)}></i>
+            </BotonCerra>
           </EncabezadoModal>
-          <BotonCerra>
-            <i class="bx bx-x" onClick={() => setModalError(false)}></i>
-          </BotonCerra>
-          <ErrorModal>
+          <Content>
             <h3>Debes introducir un nombre para poder continuar.</h3>
-          </ErrorModal>
+            <Btn onClick={() => setModalError(false)}>Entendido</Btn>
+          </Content>
         </ContenedorModal>
       </Overlay>
     </>
@@ -34,10 +35,11 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 `;
 
 const ContenedorModal = styled.article`
-  width: 50%;
+  width: min(90%, 500px);
   min-height: 200px;
   background: #fff;
   position: relative;
@@ -57,15 +59,11 @@ const EncabezadoModal = styled.div`
   h3 {
     font-weight: 500;
     font-size: 16px;
-    color: #17181C;
+    color: #17181c;
   }
 `;
 
 const BotonCerra = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-
   width: 30px;
   height: 30px;
   border: none;
@@ -73,7 +71,7 @@ const BotonCerra = styled.button`
   cursor: pointer;
   transition: 0.3s ease all;
   border-radius: 5px;
-  color: #17181C;
+  color: #17181c;
   font-size: 1.5em;
   display: flex;
   align-items: center;
@@ -84,8 +82,20 @@ const BotonCerra = styled.button`
   }
 `;
 
-const ErrorModal = styled.div`
+const Content = styled.div`
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+  gap: 1.5em;
+`;
+
+const Btn = styled.button`
+  padding: 0.5em 1em;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: none;
+  font-weight: 600;
+  cursor: pointer;
+`;

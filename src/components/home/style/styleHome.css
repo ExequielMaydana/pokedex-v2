@@ -1,134 +1,334 @@
-.raiz{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-image: url('../../../assets/imgs/fondo-pokeball2.webp');
-
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+@font-face {
+  font-family: "pokedex";
+  src: url("../../../../fonts/PokemonHollow.ttf") format("truetype");
 }
 
-.container-form{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.raiz {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 3em;
+  background: #0a0a0a;
 }
 
-.form{
-    width: 80%;
-    padding: 20px;
-    margin-bottom: 170px;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5em;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.img-one {
+  width: 100px;
+  aspect-ratio: 1;
+}
 
-    background-color: #17181cdd;
-    border-radius: 5px;
-    color: #EAEBED;
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+.raiz-title {
+  font-size: 3em;
+  color: #ffcb05;
+  font-family: "pokedex", sans-serif;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.form {
+  width: min(90%, 600px);
+  padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  background-color: #a1a1aa;
+  border-radius: 8px;
+  color: #eaebed;
+  /* box-shadow: 0 0 10px rgba(237, 28, 36, 0.3); */
+
+  background-image: url("../../../../bgs/container_bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.form-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.3em;
+  color: #17181c;
 }
 
 .form-text h2 {
-    font-weight: 800;
+  font-weight: 800;
+  font-size: 2em;
 }
 
-.form-item{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-text p {
+  font-size: 1.1em;
 }
 
-.form-label{
-    font-weight: 400;
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  color: #17181c;
 }
 
-.form-input{
-    border: none;
-    outline: none;
-    width: 70%;
-    padding: 5px 0;
-    border-radius: 3px;
-    background-color: #EAEBED;
-    color: #17181C;
-    caret-color: #FCD037;
+.form-label {
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
-.form-btn{
-    border: none;
-    width: 30%;
-    padding: 5px 0;
-    border-radius: 3px;
-    color: #17181C;
-    background-color: #EAEBED;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 200ms;
+.form-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+  background-color: #eaebed;
+  color: #17181c;
+  caret-color: #ffcb05;
+  padding-left: 0.5em;
 }
 
-.form-btn:hover{
-    background-color: #FA4753;
-    color: #EAEBED;
-    transition: 200ms;
-    box-shadow: 0 1px 8px #EAEBED;
+.form-btn {
+  border: none;
+  width: 140px;
+  height: 35px;
+  color: #eaebed;
+  text-transform: uppercase;
+  z-index: 1;
+  display: flex;
+  background: #17181c;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
-
-@media screen and (min-width: 480px){
-
-    .form{
-        width: 70%;
-    }
-
-    .form-text h2 {
-        font-size: 2em;
-    }
-
-    .form-input{
-        width: 50%;
-    }
-
-    .form-label{
-        font-size: 1.5em;
-    }
-
-    .form-input{
-        width: 50%;
-    }
-
-    .form-btn{
-        width: 20%;
-    }
-    
+.form-btn p {
+  margin: 0 auto;
+  align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
 }
 
-@media screen and (min-width: 768px){
-    .form{
-        width: 60%;
-    }
-
-    .form-btn{
-        width: 20%;
-        font-size: 1.3em;
-    }
-
-    
-    .form-input{
-        width: 60%;
-    }
-
+.form-btn::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  z-index: -1;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(
+    0% 74%,
+    4% 75%,
+    8% 76%,
+    11% 77%,
+    15% 78%,
+    20% 78%,
+    25% 77%,
+    32% 77%,
+    37% 75%,
+    40% 74%,
+    43% 74%,
+    46% 73%,
+    52% 72%,
+    57% 72%,
+    65% 74%,
+    66% 75%,
+    71% 78%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  background: #ffcb05;
+  transition: 0.2s ease;
 }
 
-@media screen and (min-width: 1000px){
-    .form{
-        width: 30%;
-    }
+.form-btn::before {
+  position: absolute;
+  content: "";
+  transform: rotate(180deg);
+  width: 100%;
+  height: 0%;
+  transition: 0.2s ease;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  clip-path: polygon(
+    0% 74%,
+    4% 75%,
+    8% 76%,
+    11% 77%,
+    15% 78%,
+    20% 78%,
+    25% 77%,
+    32% 77%,
+    37% 75%,
+    40% 74%,
+    43% 74%,
+    46% 73%,
+    52% 72%,
+    57% 72%,
+    65% 74%,
+    66% 75%,
+    71% 78%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  background: #ffcb05;
+}
+
+.form-btn:hover::after {
+  clip-path: polygon(
+    0 30%,
+    9% 34%,
+    7% 39%,
+    11% 43%,
+    13% 33%,
+    17% 30%,
+    24% 34%,
+    25% 35%,
+    30% 31%,
+    30% 38%,
+    39% 33%,
+    35% 43%,
+    43% 45%,
+    55% 46%,
+    65% 74%,
+    67% 66%,
+    81% 57%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  height: 80%;
+}
+
+.form-btn:hover::before {
+  clip-path: polygon(
+    0 30%,
+    9% 34%,
+    7% 39%,
+    11% 43%,
+    13% 33%,
+    17% 30%,
+    24% 34%,
+    25% 35%,
+    30% 31%,
+    30% 38%,
+    39% 33%,
+    35% 43%,
+    43% 45%,
+    55% 46%,
+    65% 74%,
+    67% 66%,
+    81% 57%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  height: 80%;
+}
+@media screen and (min-width: 640px) {
+  .form {
+    gap: 1.5em;
+  }
+
+  .form-label {
+    font-size: 1.5em;
+  }
+
+  .form-input {
+    font-size: 1em;
+  }
+
+  .form-btn {
+    height: 40px;
+  }
+
+  .form-btn p {
+    font-size: 16px;
+  }
+
+  .form-text p {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .raiz {
+    gap: 2.5em;
+  }
+
+  .raiz-title {
+    font-size: 5em;
+  }
+
+  .form {
+    margin-bottom: 3em;
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .header {
+    padding: 2em;
+  }
+
+  .raiz-title {
+    font-size: 7em;
+  }
+
+  .form {
+    margin-bottom: 4em;
+  }
 }
