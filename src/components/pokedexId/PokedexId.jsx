@@ -10,8 +10,6 @@ const PokedexId = () => {
 
   const [pokemonId, setPokemonId] = useState();
 
-  console.log(pokemonId);
-
   useEffect(() => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${id}/`)

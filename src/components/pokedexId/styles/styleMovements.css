@@ -1,42 +1,55 @@
-.card-movements{
-    width: min(100%, 500px);
-    padding: 10px;
-    border: 1px solid #17181c41;
-    margin-top: 5px;
+.card-movements {
+  width: min(100%, 500px);
+  padding: 10px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.2px);
+  -webkit-backdrop-filter: blur(5.2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.movements-title{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.movements-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
-.movements-vector{
-    width: 60%;
-    margin-top: 4px;
+.movements-header div {
+  width: 100%;
+  height: 1px;
+  background-color: #fafafad5;
 }
 
-.movements-container-list{
-    width: 100%;
+.movements-container-list {
+  width: 100%;
 }
 
-.list-container-names{
-    padding-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.card-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
 }
 
-.list-names{
-    border: 1px solid #17181c41;
-    padding: 3px;
-    border-radius: 3px;
+.list-names {
+  border: 1px solid #17181c75;
+  padding: 0.3em 0.5em;
+  border-radius: 6px;
+  transition: ease-in-out 0.3s;
 }
 
-@media screen and (min-width: 480px){
-    .card-movements{
-        margin-top: 0;
-    }
+@media screen and (min-width: 976px) {
+  .list-names:hover {
+    background: linear-gradient(to right, #ff9966, #ff3333);
+    transition: ease-in-out 0.1s;
+    transform: scale(1.05);
+    color: #eaebed;
+  }
 }

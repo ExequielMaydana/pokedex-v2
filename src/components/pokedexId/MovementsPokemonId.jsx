@@ -1,35 +1,23 @@
-import React from 'react'
-import vector from '../../assets/Vector-9.svg'
-import './styles/styleMovements.css'
+import React from "react";
+import "./styles/styleMovements.css";
 
-
-
-const MovementsPokemonId = ({pokemonId}) => {
-
-
+const MovementsPokemonId = ({ pokemonId }) => {
   return (
-    <article className='card-movements'>
-        <section className='movements-title'>
-            <h3>Movements</h3>
-            <img src={vector} className="movements-vector"/>
-        </section>
+    <article className="card-movements">
+      <header className="movements-header">
+        <h3 className="movements-title">Movements</h3>
+        <div></div>
+      </header>
 
-        <section className='movements-container-list'>
-            <div className='list-container-names'>
-            {
-                pokemonId?.moves.map(moves => (
-                  <div key={moves.move.name} className="list-names">
-                    <span className='name-movements'>{moves.move.name}</span>
-                  </div>
-                ))
-            }
-            </div>
-           
-        </section>
-
-
+      <div className="card-content">
+        {pokemonId?.moves.map((moves) => (
+          <article key={moves.move.name} className="list-names">
+            <span className="name-movements">{moves.move.name}</span>
+          </article>
+        ))}
+      </div>
     </article>
-  )
-}
+  );
+};
 
-export default MovementsPokemonId
+export default MovementsPokemonId;

@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 1.5em;
+  gap: 1em;
 }
 
 .img-one {
@@ -37,7 +38,7 @@
 }
 
 .raiz-title {
-  font-size: 3em;
+  font-size: 2.5em;
   color: #ffcb05;
   font-family: "pokedex", sans-serif;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
@@ -317,6 +318,10 @@
   .form {
     margin-bottom: 3em;
   }
+
+  .img-one {
+    width: 130px;
+  }
 }
 
 @media screen and (min-width: 996px) {
@@ -330,5 +335,9 @@
 
   .form {
     margin-bottom: 4em;
+  }
+
+  .img-one {
+    width: 150px;
   }
 }
