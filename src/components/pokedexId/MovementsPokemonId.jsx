@@ -5,7 +5,7 @@ const MovementsPokemonId = ({ pokemonId }) => {
   return (
     <article className="card-movements">
       <header className="movements-header">
-        <h3 className="movements-title">Movements</h3>
+        <h3 className="movements-title">Movimientos</h3>
         <div></div>
       </header>
 
