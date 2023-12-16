@@ -5,6 +5,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import { useState } from "react";
 import Pokedex from "./components/pokedex/Pokedex";
 import PokedexId from "./components/pokedexId/PokedexId";
+import { store } from "./store";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);

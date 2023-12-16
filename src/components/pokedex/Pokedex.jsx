@@ -8,7 +8,8 @@ import "./style/stylePokedex.css";
 import MemoizedCardPokemon from "./CardPokemon";
 
 const Pokedex = () => {
-  const nameUser = useSelector((state) => state.nameUser);
+  const nameUser = useSelector((state) => state.name); // Asegúrate de usar 'name' en lugar de 'nameUser'
+
   const { filteredPokemons, setPokemonType, setNamePokeSearch } =
     useGetUrlPokemons();
 
@@ -33,7 +34,7 @@ const Pokedex = () => {
           />
         </figure>
         <h2 className="title-nameUser">
-          Bienvenido/a <b>{nameUser.name}</b>, aquí puedes encontrar tu Pokémon
+          Bienvenido/a <b>{nameUser}</b>, aquí puedes encontrar tu Pokémon
           favorito.
         </h2>
         <InputSearchName

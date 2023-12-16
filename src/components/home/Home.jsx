@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { nameUserGlobal } from "../../store/slices/nameUser.slice";
 import ModalError from "./ModalError";
@@ -9,19 +9,22 @@ import "./style/styleHome.css";
 const Home = ({ setIsLogged }) => {
   const { register, handleSubmit } = useForm();
 
-  // este estado maneja cuando se muestra el modal de error.
   const [modalError, setModalError] = useState(false);
 
-  // dispatch almacena el nombre en la store de redux
   const dispatch = useDispatch();
 
-  // navigate nos dirije a la ruta /pokedex donde se muestran los pokemones
   const navigate = useNavigate();
 
-  /* en esta funcion valido que introduzcan un nombre y no puros espacios.
-    Tambien use la validacion de react-hook-form y agregue en el registo un maxLenght de 10 caracteres.
-    Si el input esta vacio renderizo un modal, avisandole al usuaio del error.
-  */
+  const userName = useSelector((state) => state.nameUser);
+
+  useEffect(() => {
+    if (userName) {
+      console.log(userName);
+      setIsLogged(true);
+      navigate("pokedex");
+    }
+  }, [userName, setIsLogged, navigate]);
+
   const submit = (data) => {
     if (data.name.trim() !== "") {
       dispatch(nameUserGlobal(data));
